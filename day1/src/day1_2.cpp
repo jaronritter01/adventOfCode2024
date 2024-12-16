@@ -11,7 +11,7 @@ int calcSimilarityScore(std::vector<int> &first, std::vector<int> &second);
 TuplesOfVec readLists(std::string fileLocation);
 
 int main() {
-    TuplesOfVec lists = readLists("data/day1/input.txt");
+    TuplesOfVec lists = readLists("day1/data/input.txt");
     std::vector<int> first = *std::get<0>(lists);
     std::vector<int> second = *std::get<1>(lists);
     int similarityScore = calcSimilarityScore(first, second);

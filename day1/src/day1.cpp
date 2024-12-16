@@ -18,7 +18,7 @@ int main() {
 }
 
 int readListsAndGetTotalDistance() {
-    TuplesOfVec lists = readLists("data/day1/input.txt");
+    TuplesOfVec lists = readLists("day1/data/input.txt");
     std::vector<int> firstList = *std::get<0>(lists);
     std::vector<int> secondList = *std::get<1>(lists);
     std::sort(firstList.begin(), firstList.end());
