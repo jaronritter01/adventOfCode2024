@@ -19,11 +19,13 @@ int main() {
 
 int readListsAndGetTotalDistance() {
     TuplesOfVec lists = readLists("day1/data/input.txt");
-    std::vector<int> firstList = *std::get<0>(lists);
-    std::vector<int> secondList = *std::get<1>(lists);
-    std::sort(firstList.begin(), firstList.end());
-    std::sort(secondList.begin(), secondList.end());
-    return getTotalDistance(firstList, secondList);
+    std::vector<int> *firstListPtr = std::get<0>(lists), *secondListPtr = std::get<1>(lists);
+    std::sort(firstListPtr -> begin(), firstListPtr -> end());
+    std::sort(secondListPtr -> begin(), secondListPtr -> end());
+    int totalDistance = getTotalDistance(*firstListPtr, *secondListPtr);
+    delete(firstListPtr);
+    delete(secondListPtr);
+    return totalDistance;
 }
 
 void timeIt(int (*func)(), int timesToRun) {
